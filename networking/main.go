@@ -134,11 +134,9 @@ func isBlockValid(newBlock, oldBlock Block) bool {
 
 // make sure the chain we're checking is longer than the current blockchain
 func replaceChain(newBlocks []Block) {
-	mutex.Lock()
 	if len(newBlocks) > len(Blockchain) {
 		Blockchain = newBlocks
 	}
-	mutex.Unlock()
 }
 
 // SHA256 hasing
